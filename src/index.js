@@ -1,3 +1,8 @@
+/*
+ Author: Christian Perez
+ Referencia: https://appdelante.com/cursos/juego-de-memoria-react
+*/
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from './componentes/header';
