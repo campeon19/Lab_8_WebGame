@@ -53,7 +53,38 @@ class App extends React.Component{
         const parejasSeleccionadas = [...this.state.parejasSeleccionadas, carta];
         this.setState({
             parejasSeleccionadas
-        }) 
+        });
+        
+        if(parejasSeleccionadas.length === 2){
+            this.compararParejas(parejasSeleccionadas);
+        }
+    }
+
+    compararParejas(parejasSeleccionadas){
+        this.setState({estaComparando:true});
+        setTimeout(() => {
+            const [primeraCarta, segundaCarta] = parejasSeleccionadas;
+            let baraja = this.state.baraja;
+
+            if(primeraCarta.icono === segundaCarta.icono){
+                baraja = baraja.map((carta) =>{
+                    if(carta.icono !== primeraCarta.icono){
+                        return carta;
+                    }
+
+                    return{...carta, fueAdivinada:true};
+                });
+
+
+            }
+
+            this.setState({
+                parejasSeleccionadas: [],
+                baraja,
+                estaComparando: false
+            });
+            
+        }, 1000)
     }
 }
 
