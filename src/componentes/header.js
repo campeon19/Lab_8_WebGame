@@ -6,9 +6,6 @@ class Header extends React.Component{
         return(
             <header>
                 <div className= 'titulo'>Memoria</div>
-                <div>
-                    <button className="reiniciar" onClick={this.props.reiniciarPartida}>Reiniciar</button>
-                </div>
                 <div className= 'titulo'>Intentos: {this.props.numeroIntentos}</div>
             </header>
         )

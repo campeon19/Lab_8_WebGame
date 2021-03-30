@@ -2,11 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from './componentes/header';
 import Tablero from './componentes/tablero';
+import Boton from './componentes/boton';
 import './index.css';
 import construirBaraja from './componentes/util/construirBaraja';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import '@fortawesome/fontawesome-free/css/all.css';
+//import 'bootstrap/dist/css/bootstrap.min.css';
 
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -40,6 +42,9 @@ class App extends React.Component{
                  baraja={this.state.baraja}
                  parejasSeleccionadas={this.state.parejasSeleccionadas}
                  seleccionarCarta={(carta) => this.seleccionarCarta(carta)}
+                />
+                <Boton
+                reiniciarPartida={() => this.reiniciarPartida()}
                 />
             </div>
         );

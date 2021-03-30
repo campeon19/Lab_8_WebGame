@@ -10,7 +10,9 @@ class Carta extends React.Component{
                 <ReactCardFlip
                     isFlipped={this.props.estaSiendoComparada || this.props.fueAdivinada}
                 >
-                    <div className="portada"></div>
+                    <div className="portada">
+                        <img src="https://i.pinimg.com/originals/9f/27/50/9f2750b762d5f725c98d43945ceb2b83.jpg"></img>
+                    </div>
                     <div className="contenido">
                     <i className={'fa ' + this.props.icono + ' fa-5x' }></i>
                     </div>

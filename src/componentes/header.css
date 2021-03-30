@@ -3,14 +3,18 @@ header{
     border: 1px;
     margin-bottom: 10px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-content: center;
+    min-height: 8vh;
+    background-color: rgb(112, 184, 247);
 }
 
 .titulo{
+    color: aliceblue;
+    text-transform: uppercase;
+    letter-spacing: 5px;
     font-size: 25px;
-    padding: 10px;
-    color: white;
+    padding: 15px;
 }
 
 .reiniciar{
@@ -18,4 +22,3 @@ header{
     left: 12px;
     top: 58px;
 }
-
