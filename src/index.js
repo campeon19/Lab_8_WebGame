@@ -17,6 +17,7 @@ const estadoInicial = () =>{
         baraja,
         parejasSeleccionadas: [],
         estaComparando: false,
+        numeroIntentos: 0
     };
 }
 
@@ -31,7 +32,10 @@ class App extends React.Component{
     render(){
         return(
             <div className='app'>
-                <Header />
+                <Header 
+                    numeroIntentos={this.state.numeroIntentos}
+                    reiniciarPartida={() => this.reiniciarPartida()}
+                />
                 <Tablero 
                  baraja={this.state.baraja}
                  parejasSeleccionadas={this.state.parejasSeleccionadas}
@@ -77,14 +81,29 @@ class App extends React.Component{
 
 
             }
-
+            this.verificarVictoria(baraja);
             this.setState({
                 parejasSeleccionadas: [],
                 baraja,
-                estaComparando: false
+                estaComparando: false,
+                numeroIntentos: this.state.numeroIntentos + 1
             });
-            
+
         }, 1000)
+    }
+
+    verificarVictoria(baraja){
+        if(
+            baraja.filter((carta) => !carta.fueAdivinada).length === 0
+        ){
+            alert(`Ganaste! Te tomo ${this.state.numeroIntentos} intentos`);
+        }
+    }
+
+    reiniciarPartida(){
+        this.setState(
+            estadoInicial()
+        )
     }
 }
 

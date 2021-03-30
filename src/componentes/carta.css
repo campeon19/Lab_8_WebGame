@@ -6,7 +6,7 @@
 .portada{
     width: 125px;
     height: 125px;
-    background-color: orange;
+    background-color: rgb(255, 0, 0);
 }
 
 .contenido{
@@ -15,7 +15,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: aqua;
+    background-color: rgb(185, 245, 245);
 }
 
 .ReactFlipCard{
