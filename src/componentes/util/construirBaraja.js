@@ -10,7 +10,7 @@ export default() =>{
         const index = Math.floor(Math.random() * fontAwesomeClasses.length);
         const carta = {
             icono: fontAwesomeClasses.splice(index,1)[0],
-            fueAdivinada: falso
+            fueAdivinada: false
         };
 
         cartas.push(carta);
